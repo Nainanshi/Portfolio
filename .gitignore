@@ -1,0 +1,15 @@
+# macOS junk
+.DS_Store
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Node/local modules (if you add build tools later)
+node_modules/
+dist/
+.env

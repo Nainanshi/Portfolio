@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1a1614 radial-gradient(circle at center, #2e241d 0%, #0d0b0a 100%);
+  font-family: 'Lora', serif;
+  color: #3b2818;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- Header / Escape Hatch --- */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(15, 12, 10, 0.85);
+  border-bottom: 2px solid #5a4128;
+  backdrop-filter: blur(8px);
+  color: #e0d0b8;
+  z-index: 100;
+}
+
+.character-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+}
+
+.tag {
+  background: #b4863d;
+  color: #1a1614;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.hero-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.role-badge {
+  color: #a8947f;
+  font-size: 0.85rem;
+}
+
+.btn-coin, .btn-scroll {
+  background: #3e2d1d;
+  color: #e6c99c;
+  border: 1px solid #7d5b36;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.btn-coin:hover, .btn-scroll:hover {
+  background: #5d432b;
+  color: #fff;
+}
+
+/* --- Journal Stage --- */
+.journal-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 60px 20px 20px; /* Right padding preserves room for tabs */
+}
+
+/* StPageFlip Container */
+.flip-book {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.page {
+  background: #f4ecd8 url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  border: 1px solid #d4c5a9;
+  overflow: hidden;
+}
+
+.page-content {
+  padding: 32px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Typography */
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #432818;
+  border-bottom: 2px solid #8c6843;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+.flavor-text {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Elements */
+.card-photo {
+  width: 90px;
+  height: 110px;
+  background: #fff;
+  border: 1px solid #c4b59d;
+  box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+  transform: rotate(-3deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.photo-placeholder {
+  font-size: 2.2rem;
+}
+
+.caption {
+  font-size: 0.65rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.stats-box, .note-box, .contact-box {
+  background: rgba(220, 207, 184, 0.45);
+  border: 1px dashed #9d8262;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.traits-list, .loot-list {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tags span, .tech-pill-list span {
+  display: inline-block;
+  background: #4a3525;
+  color: #f7ebd2;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin: 2px 4px 4px 0;
+}
+
+.stamp {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: 2px solid #a63429;
+  color: #a63429;
+  padding: 2px 8px;
+  font-weight: 800;
+  font-family: 'Cinzel', serif;
+  transform: rotate(12deg);
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.action-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-quest, .btn-cta {
+  display: inline-block;
+  background: #6e4e32;
+  color: #fbf5e8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+}
+
+.btn-cta {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Bottom Navigation Controls */
+.page-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(140, 104, 67, 0.3);
+  padding-top: 8px;
+}
+
+.page-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: #8c6843;
+}
+
+.corner-btn {
+  background: none;
+  border: none;
+  color: #7d5b36;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.corner-btn:hover {
+  color: #b4863d;
+}
+
+/* Bookmark Tabs (Right Edge) */
+.bookmark-tabs {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab {
+  background: #4a3525;
+  color: #f1dfc4;
+  border: 1px solid #73543b;
+  border-left: none;
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.tab:hover, .tab.active {
+  background: #875d38;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .journal-wrapper {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .bookmark-tabs {
+    position: static;
+    flex-direction: row;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tab {
+    border-left: 1px solid #73543b;
+    border-radius: 4px;
+    padding: 6px 10px;
+  }
+}

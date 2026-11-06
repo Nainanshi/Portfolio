@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventurer's Tome | Portfolio</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap" rel="stylesheet">
+  
+  <!-- Page Flip Library -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Quick Bar / Recruiter Escape Hatch -->
+  <header class="top-nav">
+    <div class="character-title">
+      <span class="tag">Lv. 99</span>
+      <span class="hero-name">Alex Mercer</span>
+      <span class="role-badge">Full-Stack Paladin</span>
+    </div>
+    <div class="quick-actions">
+      <button id="audio-toggle" class="btn-coin" title="Toggle Page Sounds">🔊 Sound</button>
+      <a href="resume.pdf" target="_blank" class="btn-scroll">📜 Plain Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- Main Journal Container -->
+  <main class="journal-wrapper">
+    
+    <!-- Flipbook Target Element -->
+    <div id="book" class="flip-book">
+
+      <!-- ================= SPREAD 1: ABOUT ME ================= -->
+      <!-- Page 1 (Left) -->
+      <div class="page" data-density="hard">
+        <div class="page-content">
+          <div class="card-photo">
+            <div class="photo-placeholder">👤</div>
+            <span class="caption">Character Portrait</span>
+          </div>
+          <h2 class="section-title">Adventurer Profile</h2>
+          <p class="flavor-text">A curious builder journeying across modern web stacks, crafting resilient distributed applications and interactive experiences.</p>
+          <div class="stats-box">
+            <div><strong>Origin:</strong> Mumbai, India</div>
+            <div><strong>Class:</strong> Frontend / Full-Stack</div>
+            <div><strong>Mana Pool:</strong> Unlimited Coffee</div>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 2 (Right) -->
+      <div class="page">
+        <div class="page-content">
+          <h2 class="section-title">Core Traits & Vitals</h2>
+          <ul class="traits-list">
+            <li><strong>✨ High Initiative:</strong> Passionate about crafting high-performance, accessible user interfaces.</li>
+            <li><strong>🛡️ System Resilience:</strong> Clean architecture advocate with an eye for maintainable codebases.</li>
+            <li><strong>🤝 Guild Cooperation:</strong> Experienced in agile team sprints and cross-functional communication.</li>
+          </ul>
+          <div class="note-box">
+            <em>"Any sufficiently advanced technology is indistinguishable from magic."</em>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">2</span>
+            <button class="corner-btn next-btn" onclick="flipBook.flipNext()">Next ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SPREAD 2: SKILLS & SPELLBOOK ================= -->
+      <!-- Page 3 (Left) -->
+      <div class="page">
+        <div class="page-content">
+          <button class="corner-btn prev-btn" onclick="flipBook.flipPrev()">⬅ Prev</button>
+          <h2 class="section-title">Spellbook: Active Skills</h2>
+          <div class="skill-group">
+            <h3>Frontend Sorcery</h3>
+            <div class="tags">
+              <span>TypeScript</span><span>React</span><span>Next.js</span><span>TailwindCSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend Alchemy</h3>
+            <div class="tags">
+              <span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>GraphQL</span>
+            </div>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 4 (Right) -->
+      <div class="page">
+        <div class="page-content">
+          <h2 class="section-title">Tools & Relics</h2>
+          <div class="skill-group">
+            <h3>Infrastructure & Dev Tools</h3>
+            <div class="tags">
+              <span>Docker</span><span>Git</span><span>AWS</span><span>Figma</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Passive Proficiencies</h3>
+            <p>UI/UX Prototyping, Performance Optimization, REST APIs, Test-Driven Development.</p>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">4</span>
+            <button class="corner-btn next-btn" onclick="flipBook.flipNext()">Next ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SPREAD 3: QUEST LOG (PROJECTS) ================= -->
+      <!-- Page 5 (Left) -->
+      <div class="page">
+        <div class="page-content">
+          <button class="corner-btn prev-btn" onclick="flipBook.flipPrev()">⬅ Prev</button>
+          <span class="stamp">COMPLETED</span>
+          <h2 class="section-title">Quest I: Project Aegis</h2>
+          <p class="subtitle">Cloud-native real-time analytics dashboard.</p>
+          <p>Engineered an enterprise observability dashboard processing 50k events/sec with sub-second websocket refreshes.</p>
+          <div class="tech-pill-list">
+            <span>React</span><span>Go</span><span>Kafka</span><span>Docker</span>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 6 (Right) -->
+      <div class="page">
+        <div class="page-content">
+          <h2 class="section-title">Loot & Deliverables</h2>
+          <ul class="loot-list">
+            <li>Reduced UI latency by 45%.</li>
+            <li>Built custom canvas charting engine.</li>
+            <li>Zero-downtime microservice migration.</li>
+          </ul>
+          <div class="action-links">
+            <a href="#" class="btn-quest">⚔️ Live Demo</a>
+            <a href="#" class="btn-quest">📦 GitHub Repo</a>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">6</span>
+            <button class="corner-btn next-btn" onclick="flipBook.flipNext()">Next ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SPREAD 4: EDUCATION & CONTACT ================= -->
+      <!-- Page 7 (Left) -->
+      <div class="page">
+        <div class="page-content">
+          <button class="corner-btn prev-btn" onclick="flipBook.flipPrev()">⬅ Prev</button>
+          <h2 class="section-title">Academy Chronicles</h2>
+          <div class="edu-item">
+            <h3>B.Tech in Computer Science</h3>
+            <span class="date">2020 – 2024</span>
+            <p>Specialization in Distributed Systems & Web Technologies.</p>
+          </div>
+          <div class="edu-item">
+            <h3>Certifications & Badges</h3>
+            <p>AWS Certified Cloud Practitioner, Meta Frontend Specialist.</p>
+          </div>
+          <div class="page-footer">
+            <span class="page-num">7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 8 (Right) -->
+      <div class="page" data-density="hard">
+        <div class="page-content">
+          <h2 class="section-title">The Raven's Post</h2>
+          <p>Ready to summon me for your next adventure or engineering quest? Send a dispatch:</p>
+          
+          <div class="contact-box">
+            <p>📧 <strong>Email:</strong> alex.mercer@email.com</p>
+            <p>💼 <strong>LinkedIn:</strong> /in/alex-mercer</p>
+            <p>🐙 <strong>GitHub:</strong> /alexmercer</p>
+          </div>
+
+          <a href="mailto:alex.mercer@email.com" class="btn-cta">🕊️ Send Dispatch</a>
+          
+          <div class="page-footer">
+            <span class="page-num">8</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bookmark Tabs on Right Edge -->
+    <nav class="bookmark-tabs">
+      <button class="tab active" data-page="0">About</button>
+      <button class="tab" data-page="2">Skills</button>
+      <button class="tab" data-page="4">Projects</button>
+      <button class="tab" data-page="6">Chronicles</button>
+    </nav>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
